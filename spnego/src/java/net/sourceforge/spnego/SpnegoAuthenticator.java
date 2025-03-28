@@ -398,7 +398,7 @@ public final class SpnegoAuthenticator {
 	    }
 
 	    if (domain != null) {
-		realm = Config.getInstance().getDefault(domain, "domain_realm");
+		realm = Config.getInstance().get("domain_realm", domain);
 	    }
 
 	    if (realm == null) {
