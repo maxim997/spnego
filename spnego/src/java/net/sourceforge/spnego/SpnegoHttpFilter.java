@@ -191,7 +191,6 @@ public final class SpnegoHttpFilter implements Filter {
         try {
             // set some System properties
             final SpnegoFilterConfig config = SpnegoFilterConfig.getInstance(filterConfig);
-            
             // pre-authenticate
             this.authenticator = new SpnegoAuthenticator(config);
         } catch (final LoginException le) {
@@ -429,5 +428,7 @@ public final class SpnegoHttpFilter implements Filter {
          * <p>The LoginModule name that exists in the login.conf file.</p>
          */
         public static final String SERVER_MODULE = "spnego.login.server.module";
+        
+        public static final String SPNEGO_PREAUTH_CRED = "spnego.preauth.usercred";
     }
 }
